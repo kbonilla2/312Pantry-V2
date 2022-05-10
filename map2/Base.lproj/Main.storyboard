@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZjP-Pc-KzF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="JosefinSans-Bold.ttf">
+            <string>JosefinSans-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="map2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qmN-bW-KYn">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="1Cb-eG-1OL">
+                            <connections>
+                                <segue destination="IeU-Zr-Sul" kind="show" id="QeD-l4-ybG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="uploadFormBtn" destination="1Cb-eG-1OL" id="zCE-mT-Yww"/>
+                        <segue destination="p3c-ui-acA" kind="presentation" identifier="detailSegue" id="Axt-VU-t6S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1921.7391304347827" y="65.625"/>
+        </scene>
+        <!--Pantry Builder-->
+        <scene sceneID="ceY-ag-ruh">
+            <objects>
+                <viewController id="9qM-DC-Nat" customClass="ARViewController" customModule="map2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HDg-4J-MCC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rmu-yq-sqV">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </arView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bZB-ml-jkQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bZB-ml-jkQ" firstAttribute="bottom" secondItem="Rmu-yq-sqV" secondAttribute="bottom" id="CvZ-h6-D8M"/>
+                            <constraint firstItem="Rmu-yq-sqV" firstAttribute="leading" secondItem="bZB-ml-jkQ" secondAttribute="leading" id="DpE-Hs-UVM"/>
+                            <constraint firstItem="bZB-ml-jkQ" firstAttribute="trailing" secondItem="Rmu-yq-sqV" secondAttribute="trailing" id="GEy-OO-dKq"/>
+                            <constraint firstItem="Rmu-yq-sqV" firstAttribute="top" secondItem="bZB-ml-jkQ" secondAttribute="top" id="TGa-XC-Ugj"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pantry Builder" image="24x24-2" id="UsY-zp-rUw"/>
+                    <connections>
+                        <outlet property="arView" destination="Rmu-yq-sqV" id="3n8-Pq-eeo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A5r-Ye-7MJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1204" y="767"/>
+        </scene>
+        <!--Confirm-->
+        <scene sceneID="okN-hu-c22">
+            <objects>
+                <viewController id="smF-fg-dG6" customClass="ConfirmationViewController" customModule="map2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c1n-2V-TqO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fpn-iL-ev6">
+                                <rect key="frame" x="20" y="220" width="374" height="456"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lBW-tk-Jx4">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="177"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="177" id="FYc-zY-ve8"/>
+                                            <constraint firstAttribute="width" constant="374" id="ZbP-dp-Iec"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjg-Fq-pZm">
+                                        <rect key="frame" x="168.5" y="197" width="37.5" height="78"/>
+                                        <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.41176470590000003" green="0.59664064650000004" blue="0.90871745349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drj-5K-nhG">
+                                        <rect key="frame" x="162.5" y="295" width="49.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.41176470590000003" green="0.59664064650000004" blue="0.90871745349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOc-sa-qQP">
+                                        <rect key="frame" x="155" y="332" width="64.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.41176470590000003" green="0.59664064650000004" blue="0.90871745349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkz-bU-UfE">
+                                        <rect key="frame" x="113.5" y="369" width="147" height="17"/>
+                                        <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.41176470590000003" green="0.59664064650000004" blue="0.90871745349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxR-On-IMR">
+                                        <rect key="frame" x="149" y="406" width="76" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="M9I-EG-fF4"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.95686274510000002" green="0.64313725489999995" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Confirm"/>
+                                        <connections>
+                                            <action selector="confirmActionBtn:" destination="smF-fg-dG6" eventType="touchUpInside" id="9sb-GC-0tm"/>
+                                            <segue destination="KDw-w7-PuS" kind="show" id="5gt-po-fdA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lBW-tk-Jx4" firstAttribute="leading" secondItem="fpn-iL-ev6" secondAttribute="leading" id="Mbj-6q-LLf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AhC-Le-OTp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fpn-iL-ev6" firstAttribute="centerX" secondItem="c1n-2V-TqO" secondAttribute="centerX" id="BJt-mR-UeG"/>
+                            <constraint firstItem="fpn-iL-ev6" firstAttribute="leading" secondItem="c1n-2V-TqO" secondAttribute="leadingMargin" id="E90-fy-Cpm"/>
+                            <constraint firstItem="fpn-iL-ev6" firstAttribute="top" secondItem="AhC-Le-OTp" secondAttribute="top" constant="80" id="ipt-1S-p0i"/>
+                            <constraint firstItem="fpn-iL-ev6" firstAttribute="centerY" secondItem="c1n-2V-TqO" secondAttribute="centerY" id="xhC-DB-qg8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Confirm" id="E7R-DW-icR"/>
+                    <connections>
+                        <outlet property="addDetailsTF" destination="Jkz-bU-UfE" id="lXG-Gf-gHz"/>
+                        <outlet property="addressTF" destination="dOc-sa-qQP" id="F67-Fk-qOV"/>
+                        <outlet property="confirmBtn" destination="xxR-On-IMR" id="byO-fx-Qo7"/>
+                        <outlet property="nameTF" destination="drj-5K-nhG" id="zMz-Te-VjW"/>
+                        <outlet property="typeTF" destination="fjg-Fq-pZm" id="8Bd-s1-jh3"/>
+                        <outlet property="userImage" destination="lBW-tk-Jx4" id="aJT-QT-3VZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6I4-Wl-tuY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3409" y="82"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="dKQ-gs-m52">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KRI-9T-wBD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="globe" catalog="system" id="ppG-Jk-3zS"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="0VZ-SK-IxW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="36"/>
+                            <color key="textColor" red="0.41176470590000003" green="0.59664064650000004" blue="0.90871745349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KRm-Qf-r0g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C39-nQ-wPA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939.13043478260875" y="65.625"/>
+        </scene>
+        <!--Found-->
+        <scene sceneID="85c-Ih-WUn">
+            <objects>
+                <viewController id="IeU-Zr-Sul" customClass="UploadViewController" customModule="map2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gJe-f7-mrt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="bmB-jd-43n">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="MEb-C2-kWw">
+                                        <rect key="frame" x="4" y="0.0" width="406" height="609"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Add pantries or fridges not on map." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sW-ss-5gQ">
+                                                <rect key="frame" x="65.5" y="0.0" width="275" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="O6p-Bk-JM9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="16"/>
+                                                <color key="textColor" red="0.58180135489999996" green="0.660797894" blue="0.79609555009999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mLz-oH-Cob">
+                                                <rect key="frame" x="126.5" y="65" width="153" height="154"/>
+                                                <subviews>
+                                                    <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzA-gY-iw3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="72.5" height="154"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="90" id="Df1-xW-Sgg"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Pantry" image="pantryIcon"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="pantryIcon" imagePlacement="top" title="Pantry"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <integer key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="pantryBtnAction:" destination="IeU-Zr-Sul" eventType="touchUpInside" id="Vwh-gq-eu1"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOY-nR-I5W">
+                                                        <rect key="frame" x="80.5" y="0.0" width="72.5" height="154"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="90" id="v0z-lL-tvh"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Fridge" image="fridgeIcon"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="fridgeIcon" imagePlacement="top" title="Fridge" imagePadding="0.0" cornerStyle="large">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                                        </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="fridgeBtnAction:" destination="IeU-Zr-Sul" eventType="touchUpInside" id="ZzB-JU-JsU"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="auo-qx-4iY">
+                                                <rect key="frame" x="88" y="244" width="230" height="365"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VI6-Tf-Lo1">
+                                                        <rect key="frame" x="79" y="0.0" width="72.5" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="a4k-aS-EWV"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="25"/>
+                                                        <color key="textColor" red="0.49019607840000001" green="0.59215686270000001" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pilsen Pantry" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oAc-kB-5eP">
+                                                        <rect key="frame" x="0.0" y="65" width="230" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="230" id="DFT-P4-y2E"/>
+                                                            <constraint firstAttribute="height" constant="40" id="Rza-yf-5l1"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="locationAction:" destination="IeU-Zr-Sul" eventType="editingChanged" id="8cg-LB-BIi"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trB-rk-F7c">
+                                                        <rect key="frame" x="68" y="130" width="94.5" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Kuc-ST-Rd4"/>
+                                                            <constraint firstAttribute="height" constant="40" id="Q9Z-9Q-nh8"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="25"/>
+                                                        <color key="textColor" red="0.49019607840000001" green="0.59215686270000001" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123 Main St, Chicago, IL 60641" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bpc-1i-fTa">
+                                                        <rect key="frame" x="0.0" y="195" width="230" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="230" id="2lK-yk-6fm"/>
+                                                            <constraint firstAttribute="height" constant="40" id="g6z-2I-b62"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="locationAction:" destination="IeU-Zr-Sul" eventType="editingChanged" id="mSM-j9-kIg"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Additional Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ve-sq-K4s">
+                                                        <rect key="frame" x="7" y="260" width="216" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="KSX-Lh-MlJ"/>
+                                                            <constraint firstAttribute="height" constant="40" id="sca-MC-9pp"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="25"/>
+                                                        <color key="textColor" red="0.49019607840000001" green="0.59215686270000001" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Next to Bob's Burgers" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mIw-xA-lRx">
+                                                        <rect key="frame" x="0.0" y="325" width="230" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="230" id="3A1-XZ-Tqz"/>
+                                                            <constraint firstAttribute="height" constant="40" id="xMf-eG-EEi"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="locationAction:" destination="IeU-Zr-Sul" eventType="editingChanged" id="2hx-LF-D10"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="bDK-wA-VtV">
+                                        <rect key="frame" x="65.5" y="633" width="283.5" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2f2-EI-ib9">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Sus-Hg-6eo"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.41176470590000003" green="0.59664064650000004" blue="0.90871745349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="">
+                                                    <imageReference key="image" image="photo.fill.on.rectangle.fill" catalog="system" symbolScale="large"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="photoUploadBtn:" destination="IeU-Zr-Sul" eventType="touchUpInside" id="wUv-IK-qkC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOw-Be-YFr">
+                                                <rect key="frame" x="99" y="0.0" width="70" height="40"/>
+                                                <color key="tintColor" red="0.95686274510000002" green="0.64313725489999995" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Submit"/>
+                                                <connections>
+                                                    <action selector="submitBtn:" destination="IeU-Zr-Sul" eventType="touchUpInside" id="NPy-vV-Nxu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZ5-wc-WUM">
+                                                <rect key="frame" x="219" y="0.0" width="64.5" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="NKD-Qo-f96"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.41176470590000003" green="0.59664064650000004" blue="0.90871745349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="" buttonSize="large">
+                                                    <imageReference key="image" image="camera.fill" catalog="system" symbolScale="large"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="cameraUploadBtn:" destination="IeU-Zr-Sul" eventType="touchUpInside" id="Shd-po-TS6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="MEb-C2-kWw" secondAttribute="trailing" constant="4" id="6ll-X0-HjX"/>
+                                    <constraint firstItem="MEb-C2-kWw" firstAttribute="leading" secondItem="bmB-jd-43n" secondAttribute="leadingMargin" constant="4" id="Q75-e8-opF"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mBD-Ad-I0L"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bmB-jd-43n" firstAttribute="centerX" secondItem="gJe-f7-mrt" secondAttribute="centerX" id="EqU-WD-RDa"/>
+                            <constraint firstItem="bmB-jd-43n" firstAttribute="leading" secondItem="mBD-Ad-I0L" secondAttribute="leading" id="ZeB-5C-pdo"/>
+                            <constraint firstItem="mBD-Ad-I0L" firstAttribute="bottom" secondItem="bmB-jd-43n" secondAttribute="bottom" id="bOU-aC-wvh"/>
+                            <constraint firstItem="mBD-Ad-I0L" firstAttribute="trailing" secondItem="bmB-jd-43n" secondAttribute="trailing" id="fc3-wY-UKQ"/>
+                            <constraint firstItem="bmB-jd-43n" firstAttribute="top" secondItem="mBD-Ad-I0L" secondAttribute="top" id="mng-gz-DeR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Found" id="bLP-LM-lc7"/>
+                    <connections>
+                        <outlet property="addDetailsLabel" destination="6ve-sq-K4s" id="wdI-bW-jmt"/>
+                        <outlet property="addDetailsTextField" destination="mIw-xA-lRx" id="Wrz-Kw-bd6"/>
+                        <outlet property="fridgeBtn" destination="eOY-nR-I5W" id="qbw-t9-MQF"/>
+                        <outlet property="instrucLabel" destination="6sW-ss-5gQ" id="nbb-1o-Ya7"/>
+                        <outlet property="locationLabel" destination="trB-rk-F7c" id="EC6-Wl-NMn"/>
+                        <outlet property="locationTextField" destination="bpc-1i-fTa" id="zTG-qo-wzZ"/>
+                        <outlet property="nameLabel" destination="VI6-Tf-Lo1" id="i9I-Nx-QpF"/>
+                        <outlet property="nameTextField" destination="oAc-kB-5eP" id="UBj-WE-BMk"/>
+                        <outlet property="pantryBtn" destination="xzA-gY-iw3" id="aj7-XB-NZf"/>
+                        <outlet property="submitBtnRef" destination="FOw-Be-YFr" id="xcN-2b-I1w"/>
+                        <segue destination="smF-fg-dG6" kind="show" identifier="submit" id="G62-Cy-4Bz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4aj-uu-bAQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2658" y="83"/>
+        </scene>
+        <!--Submitted!-->
+        <scene sceneID="i27-Fo-dbC">
+            <objects>
+                <viewController id="KDw-w7-PuS" customClass="SubmittedViewController" customModule="map2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8VW-hx-Cfy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWU-bh-zbl">
+                                <rect key="frame" x="114.5" y="430" width="185" height="36"/>
+                                <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="36"/>
+                                <color key="textColor" red="0.8862745098" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This upload has been successfully processed. Please allow some time for our app to reflect your submission." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se4-fy-NED">
+                                <rect key="frame" x="20" y="476" width="374" height="60"/>
+                                <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="20"/>
+                                <color key="textColor" red="0.49019607840000001" green="0.59215686270000001" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aAA-Xq-832"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lWU-bh-zbl" firstAttribute="centerY" secondItem="8VW-hx-Cfy" secondAttribute="centerY" id="NXc-45-QeD"/>
+                            <constraint firstItem="lWU-bh-zbl" firstAttribute="centerX" secondItem="8VW-hx-Cfy" secondAttribute="centerX" id="azh-a6-i6U"/>
+                            <constraint firstItem="se4-fy-NED" firstAttribute="leading" secondItem="aAA-Xq-832" secondAttribute="leading" constant="20" id="cGa-jT-xK9"/>
+                            <constraint firstItem="se4-fy-NED" firstAttribute="top" secondItem="lWU-bh-zbl" secondAttribute="bottom" constant="10" id="dhv-Gp-J1C"/>
+                            <constraint firstItem="aAA-Xq-832" firstAttribute="trailing" secondItem="se4-fy-NED" secondAttribute="trailing" constant="20" id="jHF-u5-bt9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Submitted!" id="4QG-eB-J80">
+                        <barButtonItem key="rightBarButtonItem" title="Home" id="Jrt-Gc-huy">
+                            <connections>
+                                <segue destination="fzb-Nn-W5S" kind="unwind" unwindAction="unwindToMapWithSegue:" id="7a9-Tf-3NJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efG-JF-6wF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="fzb-Nn-W5S" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4177" y="82"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="m1d-jc-kkx">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ZjP-Pc-KzF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Tsz-Bs-Sqb"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KMR-hf-HXN">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="KRI-9T-wBD" kind="relationship" relationship="viewControllers" id="XhQ-I4-fkG"/>
+                        <segue destination="9qM-DC-Nat" kind="relationship" relationship="viewControllers" id="0hS-Wa-FoX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v7a-BF-gKX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="65.625"/>
+        </scene>
+        <!--WelcomeVC-->
+        <scene sceneID="bCZ-bh-8hE">
+            <objects>
+                <viewController storyboardIdentifier="welcome" id="9b9-58-5rx" customClass="welcomeVC" customModule="map2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="102-cH-7Kn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYP-mo-Gvp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pmg-q8-wCn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pmg-q8-wCn" firstAttribute="bottom" secondItem="tYP-mo-Gvp" secondAttribute="bottom" id="8Jg-af-JC0"/>
+                            <constraint firstItem="tYP-mo-Gvp" firstAttribute="top" secondItem="pmg-q8-wCn" secondAttribute="top" id="WBO-gy-6Vz"/>
+                            <constraint firstItem="pmg-q8-wCn" firstAttribute="trailing" secondItem="tYP-mo-Gvp" secondAttribute="trailing" id="c6Y-y9-Ixs"/>
+                            <constraint firstItem="tYP-mo-Gvp" firstAttribute="leading" secondItem="pmg-q8-wCn" secondAttribute="leading" id="ifT-En-jSo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="holderView" destination="tYP-mo-Gvp" id="W3B-hc-umM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aAc-pQ-ZZI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="-1232"/>
+        </scene>
+        <!--Mini Panties-->
+        <scene sceneID="HDk-ga-JP9">
+            <objects>
+                <viewController storyboardIdentifier="other" id="08j-9k-YHt" customClass="miniPanties" customModule="map2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3zH-sM-MWf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mini pantries" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGD-5P-dXJ">
+                                <rect key="frame" x="20" y="114" width="226" height="36"/>
+                                <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="36"/>
+                                <color key="textColor" red="0.41176470590000003" green="0.59664064650000004" blue="0.90871745349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlA-ej-fFN">
+                                <rect key="frame" x="20" y="170" width="374" height="325"/>
+                                <string key="text">A simple way to help feed plenty, mini pantries are outdoor pantries that count on you, the community, to stack non-perishable items and hygeine products to help those in need. Usually, these mini pantries are outside of a church or home. The wood structures are raised from the ground and often feature glass doors so people can see what's inside.</string>
+                                <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MSb-jh-axZ"/>
+                        <color key="backgroundColor" red="0.8862745098" green="0.63046739159999998" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="MlA-ej-fFN" firstAttribute="leading" secondItem="MSb-jh-axZ" secondAttribute="leading" constant="20" id="Sx1-l5-w68"/>
+                            <constraint firstItem="MlA-ej-fFN" firstAttribute="top" secondItem="nGD-5P-dXJ" secondAttribute="bottom" constant="20" id="URO-DC-cc6"/>
+                            <constraint firstItem="nGD-5P-dXJ" firstAttribute="top" secondItem="MSb-jh-axZ" secondAttribute="top" constant="70" id="aQe-Gi-gyi"/>
+                            <constraint firstItem="MlA-ej-fFN" firstAttribute="centerX" secondItem="3zH-sM-MWf" secondAttribute="centerX" id="lEk-7Q-uEm"/>
+                            <constraint firstItem="MSb-jh-axZ" firstAttribute="trailing" secondItem="MlA-ej-fFN" secondAttribute="trailing" constant="20" id="p6m-8v-Exa"/>
+                            <constraint firstItem="nGD-5P-dXJ" firstAttribute="leading" secondItem="MSb-jh-axZ" secondAttribute="leading" constant="20" id="z0z-sM-CVq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="NcF-on-Squ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WIP-1L-O2X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-447.82608695652175" y="-579.91071428571422"/>
+        </scene>
+        <!--Comm Fridges-->
+        <scene sceneID="bP3-ux-AOg">
+            <objects>
+                <viewController storyboardIdentifier="other2" id="C5a-2t-Py1" customClass="commFridges" customModule="map2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ylc-Hm-u0S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="community fridges" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AY-5C-pPP">
+                                <rect key="frame" x="20" y="114" width="320" height="36"/>
+                                <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="36"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.64313725489999995" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggg-Nw-L1z">
+                                <rect key="frame" x="20" y="170" width="374" height="400"/>
+                                <string key="text">Community fridges offer free food — from fresh produce to home-cooked meals — along with sanitary products and other health-related supplies to communities in need, no questions asked. Normally run by volunteers or individuals, the fridges are publicly accessible, and supplies are almost completely sourced from local generosity. Usually these fridges are painted in bright colors or decorated with murals that represent the neighborhood they stand in.</string>
+                                <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OF3-eU-XdB"/>
+                        <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ggg-Nw-L1z" firstAttribute="top" secondItem="6AY-5C-pPP" secondAttribute="bottom" constant="20" id="6Eb-tP-QLc"/>
+                            <constraint firstItem="6AY-5C-pPP" firstAttribute="top" secondItem="OF3-eU-XdB" secondAttribute="top" constant="70" id="DE9-OD-Rlp"/>
+                            <constraint firstItem="6AY-5C-pPP" firstAttribute="leading" secondItem="OF3-eU-XdB" secondAttribute="leading" constant="20" id="NTe-Ok-5pl"/>
+                            <constraint firstItem="Ggg-Nw-L1z" firstAttribute="leading" secondItem="OF3-eU-XdB" secondAttribute="leading" constant="20" id="VBc-ST-Yfc"/>
+                            <constraint firstItem="OF3-eU-XdB" firstAttribute="trailing" secondItem="Ggg-Nw-L1z" secondAttribute="trailing" constant="20" id="eFN-t7-JHa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7m8-fa-cTz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T8k-CB-rIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="189.85507246376812" y="-579.24107142857144"/>
+        </scene>
+        <!--Food Banks-->
+        <scene sceneID="IT9-x8-PaC">
+            <objects>
+                <viewController storyboardIdentifier="other3" id="IPa-ti-0ui" customClass="foodBanks" customModule="map2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EZ7-qT-iMg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="food banks" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbM-DO-N26">
+                                <rect key="frame" x="20" y="114" width="192" height="36"/>
+                                <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="36"/>
+                                <color key="textColor" red="0.8862745098" green="0.63046739159999998" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmR-VT-EwS">
+                                <rect key="frame" x="20" y="170" width="374" height="275"/>
+                                <string key="text">A food bank is a non-profit, charitable organization that distributes food to those who have difficulty purchasing enough to avoid hunger, usually through intermediaries like food pantries and soup kitchens. Some food banks distribute food directly with their own food pantries.
+</string>
+                                <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xb5-qd-7Ie"/>
+                        <color key="backgroundColor" red="0.41176470590000003" green="0.59664064650000004" blue="0.90871745349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KbM-DO-N26" firstAttribute="top" secondItem="xb5-qd-7Ie" secondAttribute="top" constant="70" id="6nW-X9-ALq"/>
+                            <constraint firstItem="MmR-VT-EwS" firstAttribute="leading" secondItem="xb5-qd-7Ie" secondAttribute="leading" constant="20" id="Gn3-sX-cwd"/>
+                            <constraint firstItem="KbM-DO-N26" firstAttribute="leading" secondItem="xb5-qd-7Ie" secondAttribute="leading" constant="20" id="M0c-Lu-SZp"/>
+                            <constraint firstItem="MmR-VT-EwS" firstAttribute="centerX" secondItem="EZ7-qT-iMg" secondAttribute="centerX" id="Uvs-Po-1eT"/>
+                            <constraint firstItem="xb5-qd-7Ie" firstAttribute="trailing" secondItem="MmR-VT-EwS" secondAttribute="trailing" constant="20" id="bzd-TE-hqq"/>
+                            <constraint firstItem="KbM-DO-N26" firstAttribute="leading" secondItem="xb5-qd-7Ie" secondAttribute="leading" constant="20" id="rTb-Zk-Fxf"/>
+                            <constraint firstItem="MmR-VT-EwS" firstAttribute="top" secondItem="KbM-DO-N26" secondAttribute="bottom" constant="20" id="zw1-NM-5D2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="u3J-7t-ASx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Xl-St-sBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="879.71014492753625" y="-579.24107142857144"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="UJg-dE-jGg">
+            <objects>
+                <viewController id="p3c-ui-acA" customClass="DetailViewController" customModule="map2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HQf-bY-aIo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8x-pv-m96">
+                                <rect key="frame" x="20" y="65" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jk9-DH-IZM">
+                                <rect key="frame" x="20" y="118" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRB-ZV-qhp">
+                                <rect key="frame" x="20" y="206" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x8L-5w-DFA">
+                                <rect key="frame" x="87" y="301" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="SZF-Ok-Mts"/>
+                                    <constraint firstAttribute="width" constant="240" id="wNJ-Zy-PHr"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bYa-sx-uIn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="x8L-5w-DFA" firstAttribute="centerX" secondItem="HQf-bY-aIo" secondAttribute="centerX" id="UOg-Vg-egH"/>
+                            <constraint firstItem="x8L-5w-DFA" firstAttribute="centerY" secondItem="HQf-bY-aIo" secondAttribute="centerY" id="Zny-C4-2zH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="x8L-5w-DFA" id="LgG-Kw-Zwg"/>
+                        <outlet property="resourceAddress" destination="jk9-DH-IZM" id="BHv-7H-FSB"/>
+                        <outlet property="resourceDescription" destination="hRB-ZV-qhp" id="nQB-aI-0CZ"/>
+                        <outlet property="resourceName" destination="b8x-pv-m96" id="iBA-GV-NFO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SCk-sX-NW9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1922" y="767"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="24x24-2" width="25" height="25"/>
+        <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="fridgeIcon" width="48.5" height="48.5"/>
+        <image name="globe" catalog="system" width="128" height="121"/>
+        <image name="pantryIcon" width="48.5" height="48.5"/>
+        <image name="photo.fill.on.rectangle.fill" catalog="system" width="128" height="97"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
